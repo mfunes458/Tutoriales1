@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSet.Test1
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 26.163 sec <<< FAILURE!
+probarReportes(TestSet.Test1)  Time elapsed: 0.013 sec  <<< FAILURE!
+java.lang.NoSuchMethodError: com.relevantcodes.extentreports.ExtentReports.get(Ljava/lang/Class;)Lcom/relevantcodes/extentreports/ExtentReports;
+	at TestSet.Test1.probarReportes(Test1.java:52)
+

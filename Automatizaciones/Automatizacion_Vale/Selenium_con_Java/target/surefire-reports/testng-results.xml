@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Pruebas.Test1" duration-ms="90023" started-at="2019-01-31T01:45:56Z" finished-at="2019-01-31T01:47:26Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="90023" started-at="2019-01-31T01:45:56Z" finished-at="2019-01-31T01:47:26Z">
+      <class name="Pruebas.Test1">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Pruebas.Test1@79698539]" name="setUp" is-config="true" duration-ms="13212" started-at="2019-01-31T01:45:56Z" finished-at="2019-01-31T01:46:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="PruebaDos()[pri:0, instance:Pruebas.Test1@79698539]" name="PruebaDos" duration-ms="11583" started-at="2019-01-31T01:46:09Z" finished-at="2019-01-31T01:46:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PruebaDos -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Pruebas.Test1@79698539]" name="tearDown" is-config="true" duration-ms="149" started-at="2019-01-31T01:46:21Z" finished-at="2019-01-31T01:46:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Pruebas.Test1@79698539]" name="setUp" is-config="true" duration-ms="11801" started-at="2019-01-31T01:46:21Z" finished-at="2019-01-31T01:46:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="PruebaTres()[pri:0, instance:Pruebas.Test1@79698539]" name="PruebaTres" duration-ms="37258" started-at="2019-01-31T01:46:32Z" finished-at="2019-01-31T01:47:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PruebaTres -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Pruebas.Test1@79698539]" name="tearDown" is-config="true" duration-ms="143" started-at="2019-01-31T01:47:10Z" finished-at="2019-01-31T01:47:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Pruebas.Test1@79698539]" name="setUp" is-config="true" duration-ms="10213" started-at="2019-01-31T01:47:10Z" finished-at="2019-01-31T01:47:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="PruebaUno()[pri:0, instance:Pruebas.Test1@79698539]" name="PruebaUno" duration-ms="5495" started-at="2019-01-31T01:47:20Z" finished-at="2019-01-31T01:47:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PruebaUno -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:Pruebas.Test1@79698539]" name="tearDown" is-config="true" duration-ms="143" started-at="2019-01-31T01:47:26Z" finished-at="2019-01-31T01:47:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Pruebas.Test1 -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Pruebas.Test1 -->
+</testng-results>

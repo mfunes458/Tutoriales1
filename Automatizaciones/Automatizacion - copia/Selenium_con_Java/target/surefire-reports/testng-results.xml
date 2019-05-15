@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Pruebas.Test1" duration-ms="71635" started-at="2019-02-06T18:14:09Z" finished-at="2019-02-06T18:15:21Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="71635" started-at="2019-02-06T18:14:09Z" finished-at="2019-02-06T18:15:21Z">
+      <class name="Pruebas.Test1">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Pruebas.Test1@6bf256fa]" name="setUp" is-config="true" duration-ms="11882" started-at="2019-02-06T18:14:09Z" finished-at="2019-02-06T18:14:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="LoginIncorrecto()[pri:0, instance:Pruebas.Test1@6bf256fa]" name="LoginIncorrecto" duration-ms="2299" started-at="2019-02-06T18:14:21Z" finished-at="2019-02-06T18:14:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginIncorrecto -->
+        <test-method status="PASS" signature="tearDown1(org.testng.ITestResult)[pri:0, instance:Pruebas.Test1@6bf256fa]" name="tearDown1" is-config="true" duration-ms="119" started-at="2019-02-06T18:14:24Z" finished-at="2019-02-06T18:14:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginIncorrecto status=SUCCESS method=Test1.LoginIncorrecto()[pri:0, instance:Pruebas.Test1@6bf256fa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown1 -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Pruebas.Test1@6bf256fa]" name="setUp" is-config="true" duration-ms="13379" started-at="2019-02-06T18:14:24Z" finished-at="2019-02-06T18:14:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="PruebaDos()[pri:0, instance:Pruebas.Test1@6bf256fa]" name="PruebaDos" duration-ms="43806" started-at="2019-02-06T18:14:37Z" finished-at="2019-02-06T18:15:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PruebaDos -->
+        <test-method status="PASS" signature="tearDown1(org.testng.ITestResult)[pri:0, instance:Pruebas.Test1@6bf256fa]" name="tearDown1" is-config="true" duration-ms="101" started-at="2019-02-06T18:15:21Z" finished-at="2019-02-06T18:15:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=PruebaDos status=SUCCESS method=Test1.PruebaDos()[pri:0, instance:Pruebas.Test1@6bf256fa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown1 -->
+      </class> <!-- Pruebas.Test1 -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Pruebas.Test1 -->
+</testng-results>

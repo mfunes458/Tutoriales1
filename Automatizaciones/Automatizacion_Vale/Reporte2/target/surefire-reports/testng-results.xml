@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="TestSet.Test1" duration-ms="3004" started-at="2019-02-10T03:37:44Z" finished-at="2019-02-10T03:37:48Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="3004" started-at="2019-02-10T03:37:44Z" finished-at="2019-02-10T03:37:48Z">
+      <class name="TestSet.Test1">
+        <test-method status="PASS" signature="Reporte()[pri:0, instance:TestSet.Test1@5ebec15]" name="Reporte" duration-ms="2983" started-at="2019-02-10T03:37:45Z" finished-at="2019-02-10T03:37:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Reporte -->
+      </class> <!-- TestSet.Test1 -->
+    </test> <!-- Command line test -->
+  </suite> <!-- TestSet.Test1 -->
+</testng-results>

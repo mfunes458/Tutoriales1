@@ -1,0 +1,138 @@
+
+------------------------------------------TABLA SOCIOS
+
+create table socio
+(codigo_socio number,
+nombre varchar2(50),
+direccion varchar2(50),
+telefono varchar2(50),
+deporte_preferido varchar2(50),
+estado_socio varchar2(50)
+);
+
+alter table socio
+add constraint pk_socio_codigo_socio 
+primary key (codigo_socio);
+
+----------------------------------TABLA CUOTAS
+
+
+create table cuota
+(codigo_socio number,
+nro_cuota number,
+estado_cuota varchar2(50),
+monto_cuota number(10,2),
+fecha_pago date
+);
+
+
+ 
+alter table cuota
+add constraint pk_cuota_nro_cuota
+primary key(nro_cuota,codigo_socio);
+
+alter table cuota
+add constraint fk_codigo_socio
+foreign key(codigo_socio)
+references socio(codigo_socio);
+
+
+-----------------------------------TABLA RESERVAS
+
+create table reserva
+(nro_reserva number,
+codigo_socio number,
+fecha_reserva date 
+);
+
+alter table reserva
+add constraint pk_nro_reserva_reserva
+primary key(nro_reserva);
+
+alter table reserva
+add constraint fk_codigo_socio_reserva 
+foreign key (codigo_socio)
+references socio(codigo_socio);
+
+
+
+--------------------------------------TABLA INSTALACION
+
+create table instalacion
+(
+codigo_instalacion number,
+denominacion varchar2(50),
+estado varchar2(50)
+);
+
+alter table instalacion
+add constraint pk_codigo_instalacion
+primary key(codigo_instalacion);
+
+ 
+-----------------------------------------TABLA RESERVA INSTALACION
+
+
+create table reserva_instalacion
+(nro_reserva number,
+codigo_instalacion number,
+nro_secuencial_reserva number,
+hora_inicio number,
+total_horas number,
+hora_fin number  
+);
+
+alter table reserva_instalacion
+add constraint pk_reserva_instalacion
+primary key(nro_reserva,codigo_instalacion);
+
+ 
+alter table reserva_instalacion
+add constraint fk_codigo_instalacion
+foreign key(codigo_instalacion)
+references instalacion(codigo_instalacion);
+ 
+
+ 
+alter table reserva_instalacion
+add constraint fk_ri_nro_reserva
+foreign key(nro_reserva)
+references reserva(nro_reserva);
+
+
+
+ 
+
+
+---Eliminar tablas desde la principal a las auxiliares
+
+drop table cuota;
+drop table reserva_instalacion;
+drop table instalacion;    
+drop table reserva;
+drop table socio;
+
+
+
+delete from  cuota;
+delete from reserva_instalacion;
+delete from instalacion;    
+delete from reserva;
+delete from  socio;
+commit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+
+
+
+
+
+CP1
+Abrir el navegador en Google 
+Insertar en el buscador : "CADENA3"
+Ingresar  a la pagina de CADENA3
+Cerrar el navegador
+
+CP2
+Abrir el navegador en Google 
+Insertar en el buscador : "LA VOZ DEL INTERIOR"
+Ingresar  a  pagina de LA VOZ
+Cerrar el navegador

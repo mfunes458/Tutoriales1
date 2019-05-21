@@ -26,8 +26,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
+
 
 import Metodo.Varios;
 import PackModelo.PaqueteModelo;
@@ -200,7 +199,7 @@ public class Test1 {
 		int prestamoInt=0;
 		
 		 
-			ExtentReports logueo=ExtentReports.get(Test1.class);
+		
 			logueo.init("C:\\Users\\Valentino Falcucci\\Desktop\\Automatizacion\\DEMO_PORTAL\\Reporte\\Reporte_Prestamo_Acreditar_Prestamo.html",true);
 			logueo.startTest("PROBANDO REPORTES");
 			 
@@ -272,7 +271,7 @@ public class Test1 {
  				//1-ETAPA : LOGIN
  				//---------------
  				 
- 				logueo.log(LogStatus.INFO,"LOGIN-INGRESANDO AL PORTAL");
+ 				
  				 
  		 		driver.findElement(inputLogin).sendKeys(linea);
  				 driver.findElement(botonLogin).click(); 
@@ -281,7 +280,7 @@ public class Test1 {
  			  //--------------------------
  			 //2-ETAPA -SOLICITAR PRESTAMO
  			//----------------------------	 
- 				logueo.log(LogStatus.INFO,"VALIDO SALDO INICIAL");
+ 			
  				 
  				 System.out.println("SALDO INICIAL");
  				 System.out.println(driver.findElement(textoSaldo).getText());
@@ -294,7 +293,7 @@ public class Test1 {
  				driver.findElement(prestamo10).click();
  				v.retardar(); 
  				driver.findElement(botonConfirmar).click();
- 				logueo.log(LogStatus.INFO,"SOLICITAR PRESTAMO DE 10 PESOS");
+ 		
  				
  					
  			//--------------------------	
@@ -306,25 +305,24 @@ public class Test1 {
  				System.out.println(driver.findElement(textPrestamo10).getText());
  				prestamoInt=Integer.parseInt(driver.findElement(textPrestamo10).getText().substring(1,3)); 				 
  				Assert.assertTrue(driver.findElement(textPrestamo10).getText().contains("$10,00"),"COINCIDEN");	
- 				logueo.log(LogStatus.INFO,"VERIFICAR PRESTAMO  SOLICITADO ES DE 10 PESOS");
+ 			
  				 
  				
  				
  				System.out.println("SALDADO"); 				
  				System.out.println( driver.findElement(textPrestamoSaldado).getText());
  				Assert.assertTrue(driver.findElement(textPrestamoSaldado).getText().contains("$0,00"),"PRESTAMO SALDADO");	
- 				logueo.log(LogStatus.INFO,"VERIFICAR MONTO  SALDADO");
+ 				
  				
  				System.out.println("PENDIENTE"); 
  				 System.out.println(  driver.findElement(txtPrestamoPendiente).getText());
  	 			Assert.assertTrue(driver.findElement(txtPrestamoPendiente).getText().contains("$10,00"),"PRESTAMO PENDIENTE");	
- 	 			logueo.log(LogStatus.INFO,"VERIFICAR MONTO PENDIENTE ");
- 	 			as
+ 	 			
  	 			
  	 			System.out.println("COSTO SERVICIO"); 	 			
  	 			System.out.println( driver.findElement(txtCostoServicioVigente).getText());
  	 			Assert.assertTrue(driver.findElement(txtCostoServicioVigente).getText().contains("$2,00"),"COSTO SERVICIO PENDIENTE");	
- 	 			logueo.log(LogStatus.INFO,"VERIFICAR COSTO DE SERVICIO "); 	 			
+ 	 			
  	 			v.retardar();
  	 			sacarCaptura(titulo,"__"+(contador++)+"__"+"VERIFICAR_PRESTAMO_ACREDITADO__",driver);
  	 			 
@@ -560,7 +558,7 @@ public class Test1 {
  				 Assert.assertTrue(driver.findElement(linkVerDetalles).getText().contains("Ver detalles"));
  				 System.out.println("EL LINK ES "+"  "+driver.findElement(linkVerDetalles).getText());
  				 sacarCaptura(titulo,"__"+(contador++)+"__"+"VERIFICAR_LINK_VER_DETALLE__",driver); 	
- 				 logueo.log(LogStatus.INFO,"VERIFICAR QUE SE MUESTRE LINK VER DETALLES");
+ 				
  				 driver.findElement(linkVerDetalles).click();
  				 v.retardar();
  				
@@ -573,17 +571,17 @@ public class Test1 {
  				 System.out.println(driver.findElement(textPrestamo10_dp).getText());
  				 				 
  				Assert.assertTrue(driver.findElement(textPrestamo10_dp).getText().contains("$10,00"),"COINCIDEN");	
- 				logueo.log(LogStatus.INFO,"VERIFICAR PRESTAMO  SOLICITADO ES DE 10 PESOS");
+ 			
  				
  				System.out.println("SALDADO"); 				
  				 System.out.println( driver.findElement(textPrestamoSaldado_dp).getText());
  				Assert.assertTrue(driver.findElement(textPrestamoSaldado_dp).getText().contains("$0,00"),"PRESTAMO SALDADO");	
- 				logueo.log(LogStatus.INFO,"VERIFICAR MONTO  SALDADO");
+ 	
  				
  				System.out.println("PENDIENTE"); 
  				 System.out.println(  driver.findElement(txtPrestamoPendiente_dp).getText());
  	 			Assert.assertTrue(driver.findElement(txtPrestamoPendiente_dp).getText().contains("$10,00"),"PRESTAMO PENDIENTE");	
- 	 			logueo.log(LogStatus.INFO,"VERIFICAR MONTO PENDIENTE ");
+ 	 		
  	 			
  	 			
  	 			System.out.println("COSTO SERVICIO"); 	 			

@@ -1,0 +1,67 @@
+package Paquete;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Conexion {
+
+	 
+	 private Connection con = null;
+
+	
+	 
+	 public   Connection  AbrirConexion()
+		{
+		   
+		    
+		    try { 
+		            Class.forName("oracle.jdbc.driver.OracleDriver"); 
+		        } catch (ClassNotFoundException e) { 
+		            System.out.println("Where is your Oracle JDBC Driver?");
+		            e.printStackTrace();
+		        } 
+		  
+		        try {    
+		                   con = DriverManager.getConnection(
+		                    "jdbc:oracle:thin:@DESKTOP-IM1AB6P:1521:xe", "SYS as SYSDBA", "Negro123");
+		             
+		        } catch (SQLException e) {
+
+		            System.out.println("Connection Failed! Check output console");
+		            e.printStackTrace();
+		        }
+		 return con;
+		}
+
+
+
+
+
+		 
+
+		    
+		public   Connection CerrarConexion()
+		{
+		    
+		         try {
+		              if (con != null) {
+		            System.out.println("You made it, take control your database now!");
+		                } else {
+		            System.out.println("Failed to make connection!");
+		        } 
+		             con.close();
+		         } catch (SQLException ex) {
+		             //Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+		        	 System.out.println("Failed to make connection!");
+		         } 
+		         
+		   return con;
+		}
+
+		
+		
+	}//Clase
+		 
+
+ 

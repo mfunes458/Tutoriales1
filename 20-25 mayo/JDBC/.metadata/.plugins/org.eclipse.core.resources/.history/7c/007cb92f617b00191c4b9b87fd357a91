@@ -1,0 +1,14 @@
+package Paquete;
+
+public class Controlador {
+
+	public static void main(String[] args) {
+		
+		//en el mismo paquete no hace falta importar nada
+	 Conexion objConexion=new Conexion();
+	 objConexion.AbrirConexion();
+	 
+	 objConexion.CerrarConexion();
+
+	}//main
+}//Clase

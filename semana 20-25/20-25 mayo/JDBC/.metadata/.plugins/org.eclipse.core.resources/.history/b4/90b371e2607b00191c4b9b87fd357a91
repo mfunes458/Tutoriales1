@@ -1,0 +1,10 @@
+package Paquete;
+
+public class Controlador {
+
+	public static void main(String[] args) {
+		
+	 Conexion objConexion=new Conexion();
+
+	}//main
+}//Clase

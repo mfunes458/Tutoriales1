@@ -1,0 +1,47 @@
+package Paquete;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class PruebaDriver1 {
+	
+	public static WebDriver driver=null; 
+	
+	public static void main(String[] args) {
+
+	    //private  static WebDriver driver;//mal' no me permite volver a llamarlo en el main deberia importar
+		//public WebDriver driver; //no me permite volver a llamarlo  en el main , deberia importarlo 
+		 		 
+//			 WebDriverManager.chromedriver().setup();
+//			 driver=new ChromeDriver();  
+//			 try {
+//				 driver.get("https://www.google.com");
+//				Thread.sleep(3000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} 
+//			 driver.close();
+			 
+		
+		
+		
+		 WebDriverManager.firefoxdriver().setup();//firefoxDriver().versio("2.3").setup();
+		 driver=new FirefoxDriver();  
+		 try {
+			 driver.get("https://www.google.com");
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		 driver.close();
+		 
+	
+		
+		
+	}//Clase
+}//espacio

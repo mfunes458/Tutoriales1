@@ -1,0 +1,63 @@
+
+
+
+
+IMPORTAR
+
+
+import java.awt.RenderingHints.Key; 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+
+CLASE
+
+
+	
+	public static void retardar() //static evito crear un objeto
+	{
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public static void buscarGoogle()//static se usa para evitar crear un objeto  de la clase
+	{
+		
+	 
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Valentino\\Desktop\\Prueba_Automatizacion\\Driver\\ChromeDriver\\chromedriver.exe");
+
+		
+		//abrimos google
+		 WebDriver driver=new ChromeDriver();
+		 driver.get("https://www.google.com/");
+		driver.manage().window().maximize(); 
+		
+		//insertamos una palabra en el buscador (textbox)
+		//buscamos elemento con chropath
+		
+		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("AUTOMATION STEP BY STEP");
+		retardar();
+		//hacemo click en el boton  buscar
+		 driver.findElement(By.name("btnK")).click();//click en el boton
+		driver.findElement(By.name("btnK")).sendKeys(Keys.RETURN);;//preciona enter en ese boton 
+		
+		
+	   System.out.println("EL TEST TIENE UN RESULTADO SATISFACTORIO");
+		
+	}
+	
+
+
+MAIN
+
+
+buscarGoogle();

@@ -15,7 +15,10 @@ public class PruebaMozilla {
 		System.out.println("projectPath "+projectPath);//si no trae nada es null (no existe) 
 		 
 		System.setProperty("webdriver.chrome.driver",projectPath+"\\Driver\\Chrome\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Valentino Falcucci\\Desktop\\semana 20-25\\Raghav\\AutomationStep\\Driver\\Chrome\\chromedriver.exe");
+		
+		//System.setProperty("webdriver.chrome.driver","C:\\Users\\Valentino Falcucci\\Desktop\\semana 20-25\\Raghav\\AutomationStep\\Driver\\Chrome\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","D:\\Programas\\Driver\\ChromeDriver74\\chromedriver.exe");
+
 		WebDriver driver=new ChromeDriver();
 		driver.get("https://www.seleniumhq.org/");
 		

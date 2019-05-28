@@ -1,0 +1,12 @@
+--------------------------------ARG-----------------------------------
+stl/artsat143@ARTPROD.WORLD
+ccard/satar678@artccard
+EBILL/tbilsat375@TEBILL
+--------------------------------PY-----------------------------------
+stl/pytsat001@PYTPROD.WORLD
+ccard/satpy678@pytccard.world
+ebill/ebill_1509@PYTEBILL.WORLD
+--------------------------------UY-----------------------------------
+stl/uytsat001@UYTPROD.WORLD
+ccard/satuy582@UYTCCARD.WORLD
+EBILL/claro009@UYTEBILL.WORLD 

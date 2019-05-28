@@ -1,0 +1,145 @@
+package Paquete;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Controlador {
+
+	
+	
+	
+	
+	
+	public void getPersonas()
+	{
+		//Todos los importa de java.sql
+		Conexion objConexion=new Conexion();
+		Connection con=null;
+		Statement stm=null;
+		ResultSet rs=null;
+		
+		con=objConexion.AbrirConexion();
+		
+		try {
+			stm=con.createStatement();
+			rs=stm.executeQuery("select * from persona");
+			
+			while(rs.next())
+			{
+				System.out.println("NOMBRE "+rs.getString(1));//siempre comienza de 1 no de cero
+				System.out.println("APELLIDO "+rs.getString(2));//siempre comienza de 1 no de cero
+				System.out.println("DOCUMENTO "+rs.getString(3));//siempre comienza de 1 no de cero
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	     
+
+	
+	
+	public void buscarPersonasDoc(int documento)
+	{
+		//Todos los importa de java.sql
+		Conexion objConexion=new Conexion();
+		Connection con=null;
+		Statement stm=null;
+		ResultSet rs=null;
+		
+		con=objConexion.AbrirConexion();
+		
+		try {
+			stm=con.createStatement();
+			rs=stm.executeQuery("select * from persona where documento="+documento);//nunca poner la coma
+			
+			while(rs.next())
+			{
+				System.out.println("NOMBRE "+rs.getString(1));//siempre comienza de 1 no de cero
+				System.out.println("APELLIDO "+rs.getString(2));//siempre comienza de 1 no de cero
+				System.out.println("DOCUMENTO "+rs.getString(3));//siempre comienza de 1 no de cero
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	
+	String selectSQL = "SELECT USER_ID, USERNAME FROM DBUSER WHERE USER_ID = ?";
+	PreparedStatement preparedStatement = dbConnection.prepareStatement(selectSQL);
+	preparedStatement.setInt(1, 1001);
+	ResultSet rs = preparedStatement.executeQuery(selectSQL );
+	while (rs.next()) {
+		String userid = rs.getString("USER_ID");
+		String username = rs.getString("USERNAME");	
+	}
+	
+	
+	public void buscarPersonasNA()
+	{
+		//Todos los importa de java.sql
+		Conexion objConexion=new Conexion();
+		Connection con=null;
+		Statement stm=null;
+		ResultSet rs=null;
+		
+		con=objConexion.AbrirConexion();
+		
+		try {
+			
+			String query="select * from persona where documento=? and apellido like '%?%'";
+			PreparedStatement preparedStatement = con.prepareStatement(selectSQL);//todos se importan de java.sql
+			stm=con.createStatement();
+			rs=stm.executeQuery("select * from persona where documento=? and apellido like '%?%'");//nunca poner la coma
+
+		 
+			stmt.setInt(1,123);//1 specifies the first parameter in the query  
+			stmt.setString(2,"OVIEDO");  
+			
+			
+			while(rs.next())
+			{
+				System.out.println("NOMBRE "+rs.getString(1));//siempre comienza de 1 no de cero
+				System.out.println("APELLIDO "+rs.getString(2));//siempre comienza de 1 no de cero
+				System.out.println("DOCUMENTO "+rs.getString(3));//siempre comienza de 1 no de cero
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	
+	  
+	
+	//MAIN	
+	
+	
+	public static void main(String[] args) {
+		
+		//en el mismo paquete no hace falta importar nada
+	Controlador objControlador=new Controlador();
+	//objControlador.getPersonas(); 
+	int documento=123;
+	objControlador.buscarPersonasDoc(123);
+	objControlador.buscarPersonasNA();
+	
+	}//main
+	
+	 
+	
+}//Clase

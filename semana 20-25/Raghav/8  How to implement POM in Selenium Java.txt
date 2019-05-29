@@ -1,0 +1,122 @@
+
+
+
+HomeGooglePOM
+
+package Paginas;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
+public class HomeGooglePOM {
+
+	//Atributo driver
+	//creo los atributos (elementos)
+	//creo los metodos
+	
+	
+ private	WebDriver driver=null; //es objeto
+	
+	By txt_buscar=By.name("q");
+	By boton_buscar=By.name("btnK");//dentro de la clase no hace falta el metodo get y set
+									//set y get es para encapsular: protegerlo en otra clase
+	
+	//constructor
+   
+	public HomeGooglePOM(WebDriver d) 
+	{
+		this.driver=d;
+	}
+	
+	
+	//Metodos
+	
+	public void setTextoBuscador(String texto)
+	{
+		driver.findElement(txt_buscar).sendKeys(texto); 
+	}
+	
+	public void clickBotonBuscador()
+	{
+		 driver.findElement(boton_buscar).sendKeys(Keys.RETURN);
+		//driver.findElement(boton_buscar).click();
+		
+	}
+	
+	
+	
+}//clase
+
+
+
+
+
+
+
+
+
+HomeGooglePOM_Test
+
+
+package TestSet;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import Paginas.HomeGoogle;
+import Paginas.HomeGooglePOM;
+
+public class HomeGooglePOM_Test {
+
+	private static WebDriver driver=null;//objeto
+	 
+	
+	public static void retardar() //static evito crear un objeto
+	{
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	 
+	
+	public static void test_buscarGoogle()
+	{
+	  
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\vfalcucci\\Desktop\\Programas\\Driver\\Chrome Driver\\ChromeDriver 74\\chromedriver.exe");
+ 
+		//abrimos google
+		 WebDriver driver=new ChromeDriver();
+		 driver.get("https://www.google.com/");
+		 driver.manage().window().maximize();  
+		 HomeGooglePOM objPOM=new HomeGooglePOM(driver);// programacion descendente
+		 retardar();
+		
+		
+		//Realizamos una busqueda
+		String texto="PROGRAMACION STEP BY STEP";
+		objPOM.setTextoBuscador(texto);
+		objPOM.clickBotonBuscador();
+		
+		retardar();		
+		 System.out.println("EL TEST TIENE UN RESULTADO SATISFACTORIO"); 
+		   driver.close();
+		
+	}
+	
+	
+	
+	//METODO MAiN
+	
+	public static void main(String[] args) {
+
+		test_buscarGoogle();
+
+	}
+	
+}//clase

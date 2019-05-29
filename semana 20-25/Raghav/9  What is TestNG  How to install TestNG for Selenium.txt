@@ -1,0 +1,77 @@
+package TestSet;
+
+
+
+import java.awt.RenderingHints.Key;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.junit.Test;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+
+
+public class CP_testNG {
+
+	
+	 private static WebDriver driver=null;
+	
+	public static void retardar() //static evito crear un objeto
+	{
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	@BeforeTest
+	public void setUpTest()
+	{
+	    System.setProperty("webdriver.chrome.driver","C:\\Users\\vfalcucci\\Desktop\\Programas\\Driver\\Chrome Driver\\ChromeDriver 74\\chromedriver.exe");
+	      driver=new ChromeDriver();
+		 driver.get("https://www.google.com/");
+		driver.manage().window().maximize(); 
+	 
+	}
+	
+	@Test
+	public  void buscarGoogle()
+	{ 
+		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("AUTOMATION STEP BY STEP");
+		retardar();
+		driver.findElement(By.name("btnK")).click();//click en el boton SS
+	}
+	
+	
+	
+	@AfterTest
+	public void tearDownTest()
+	{
+		driver.close();
+		driver.quit();
+		 System.out.println("EL TEST TIENE UN RESULTADO SATISFACTORIO");
+		
+	}
+	
+	
+	
+	//Los metodos dentro de la clase se comunican a traves del atributo
+	
+	public static void main(String[] args) { 
+		
+		CP_testNG obj=new CP_testNG();
+		obj.setUpTest();
+		obj.buscarGoogle(); 
+		obj.tearDownTest();
+	}//Main
+
+}//Clase

@@ -1,0 +1,73 @@
+package PaqueteReporte;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+
+
+
+import java.awt.RenderingHints.Key; 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class CP_ExtentReports {
+
+	private static WebDriver driver;
+	
+
+	public static void retardar() //static evito crear un objeto
+	{
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+		  // start reporters
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
+        
+     // create ExtentReports and attach reporter(s)
+        ExtentReports extent = new ExtentReports();
+        extent.attachReporter(htmlReporter);
+
+        
+     // creates a toggle for the given test, adds all log events under it    
+        ExtentTest test1 = extent.createTest("BUSCAR EN GOOGLE ", "Este es un Test de Prueba para validar el buscador de google ingresando un Texto y oprimiendo el boton BUSCAR");
+        
+        
+        
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\vfalcucci\\Desktop\\Programas\\Driver\\Chrome Driver\\ChromeDriver 74\\chromedriver.exe");
+        WebDriver driver=new ChromeDriver();
+        // log(Status, details)
+        test1.log(Status.INFO, "COMIENZA EL TEST");
+		 driver.get("https://www.google.com/");
+		driver.manage().window().maximize(); 
+		
+	 
+		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("AUTOMATION STEP BY STEP");
+		test1.pass("INGRESAR TEXTO");
+		retardar(); 
+		 driver.findElement(By.name("btnK")).click();  
+		 test1.pass("Presionar el Boton"); 
+		 
+	   driver.close();
+	   test1.pass("CERRAR EL NAVEGADOR");
+	   System.out.println("EL TEST TIENE UN RESULTADO SATISFACTORIO"); 
+	   test1.info("EL TEST SE COMPLETO SATISFACTORIAMENTE");
+	   
+	}//main
+
+}//Clase
